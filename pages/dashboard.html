@@ -12,7 +12,7 @@
         <div class="nav-links" id="navLinks">
             <a href="../index.html">Home</a>
             <a href="create.html">Create Test</a>
-            <a href="../index.html" class="btn-outline">Logout</a>
+            <a href="#" id="logoutBtn" class="btn-outline">Logout</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
     </nav>
@@ -20,13 +20,20 @@
     <main class="container">
         <div class="dashboard-grid">
             <aside class="sidebar">
-                <h3>Welcome, User!</h3>
+                <h3 id="userNameDisplay">Loading...</h3>
+                <span id="userRoleDisplay" style="font-size: 0.85rem; color: var(--text-muted); text-transform: capitalize; display: block; margin-bottom: 1rem;"></span>
                 <hr style="margin: 1rem 0; border-color: var(--border-color);">
                 <ul>
                     <li><a href="#" style="color: var(--primary-color);">Overview</a></li>
-                    <li><a href="#">My Results</a></li>
-                    <li><a href="#">My Created Tests</a></li>
-                    <li><a href="#">Settings</a></li>
+                    
+                    <li id="studentMenu" style="display: none;"><a href="#">My Results</a></li>
+                    
+                    <li id="teacherMenu" style="display: none;">
+                        <a href="create.html">Create New Test</a><br><br>
+                        <a href="#">My Created Tests</a>
+                    </li>
+                    
+                    <li style="margin-top: 1rem;"><a href="#">Settings</a></li>
                 </ul>
             </aside>
 
@@ -71,5 +78,6 @@
     </main>
 
     <script src="../js/main.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
 </body>
 </html>
