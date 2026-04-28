@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MockTest Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="../index.html">MockTest Pro</a></div>
+        <div class="nav-links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="create.html">Create Test</a>
+            <a href="../index.html" class="btn-outline">Logout</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard-grid">
+            <aside class="sidebar">
+                <h3>Welcome, User!</h3>
+                <hr style="margin: 1rem 0; border-color: var(--border-color);">
+                <ul>
+                    <li><a href="#" style="color: var(--primary-color);">Overview</a></li>
+                    <li><a href="#">My Results</a></li>
+                    <li><a href="#">My Created Tests</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </aside>
+
+            <section class="dashboard-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>12</h3>
+                        <p>Tests Taken</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>85%</h3>
+                        <p>Average Score</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>3</h3>
+                        <p>Tests Created</p>
+                    </div>
+                </div>
+
+                <h2 style="margin-bottom: 1.5rem;">Recent Activity</h2>
+                <div class="card-grid">
+                    <article class="test-card">
+                        <div class="card-content">
+                            <span style="font-size: 0.8rem; background-color: #dcfce7; color: #166534; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Completed</span>
+                            <h3 class="card-title">Advanced Mathematics</h3>
+                            <p class="card-meta">Score: 42/50 • Taken Yesterday</p>
+                            <a href="#" class="btn-secondary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="test-card">
+                        <div class="card-content">
+                            <span style="font-size: 0.8rem; background-color: #fef3c7; color: #92400e; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Draft</span>
+                            <h3 class="card-title">My Custom CS Quiz</h3>
+                            <p class="card-meta">Last edited: 2 days ago</p>
+                            <a href="create.html" class="btn-secondary">Edit Draft</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
