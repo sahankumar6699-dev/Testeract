@@ -19,20 +19,30 @@
     <main class="container">
         <div class="auth-container">
             <h2>Create an Account</h2>
-            <form action="dashboard.html" method="GET">
+            <form id="signupForm">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <input type="text" id="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    <input type="email" id="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Create a password">
+                    <input type="password" id="password" required placeholder="Create a password">
                 </div>
-                <button type="submit" class="btn-submit">Sign Up</button>
+                <div class="form-group">
+                    <label for="role">I am a:</label>
+                    <select id="role" required>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
+
+                <div id="authError" style="color: #ef4444; margin-bottom: 1rem; display: none; font-size: 0.875rem; text-align: center;"></div>
+
+                <button type="submit" class="btn-submit" id="signupBtn">Sign Up</button>
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem;">
                     Already have an account? <a href="login.html" style="color: var(--primary-color);">Login</a>
                 </p>
@@ -41,5 +51,6 @@
     </main>
 
     <script src="../js/main.js"></script>
+    <script type="module" src="../js/firebase-auth.js"></script>
 </body>
 </html>
