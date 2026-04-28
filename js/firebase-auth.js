@@ -1,4 +1,4 @@
-// Import Firebase SDKs (v10.x.x Modular via CDN)
+// --- FIREBASE IMPORTS (CDN VERSION FOR BROWSER) ---
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { 
     getAuth, 
@@ -14,22 +14,22 @@ import {
     getDoc 
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-// YOUR FIREBASE CONFIGURATION GOES HERE
+// --- YOUR FIREBASE CONFIG (UPDATED) ---
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBdPF2V0ismtFTQ1XtAE5XxcKoSDuoI7fo",
+  authDomain: "testeract-quiz.firebaseapp.com",
+  projectId: "testeract-quiz",
+  storageBucket: "testeract-quiz.appspot.com",
+  messagingSenderId: "748180455770",
+  appId: "1:748180455770:web:ef5831a9191cc8efee7363"
 };
 
-// Initialize Firebase
+// --- INITIALIZE FIREBASE ---
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// --- DOM Elements ---
+// --- DOM ELEMENTS ---
 const signupForm = document.getElementById('signupForm');
 const loginForm = document.getElementById('loginForm');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -48,10 +48,12 @@ function showError(msg) {
 if (signupForm) {
     signupForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const btn = document.getElementById('signupBtn');
         btn.textContent = 'Signing up...';
         btn.disabled = true;
-        if(authError) authError.style.display = 'none';
+
+        if (authError) authError.style.display = 'none';
 
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -59,11 +61,9 @@ if (signupForm) {
         const role = document.getElementById('role').value;
 
         try {
-            // 1. Create Auth User
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // 2. Save role and extra info to Firestore
             await setDoc(doc(db, "users", user.uid), {
                 name: name,
                 email: email,
@@ -71,7 +71,6 @@ if (signupForm) {
                 createdAt: new Date().toISOString()
             });
 
-            // 3. Redirect to Dashboard
             window.location.href = 'dashboard.html';
         } catch (error) {
             showError(error.message);
@@ -85,10 +84,12 @@ if (signupForm) {
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const btn = document.getElementById('loginBtn');
         btn.textContent = 'Logging in...';
         btn.disabled = true;
-        if(authError) authError.style.display = 'none';
+
+        if (authError) authError.style.display = 'none';
 
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -118,39 +119,41 @@ if (logoutBtn) {
 }
 
 // --- AUTH STATE & ROLE-BASED UI LOGIC ---
-// This observes the user state across all pages where this script is loaded
 onAuthStateChanged(auth, async (user) => {
     const currentPath = window.location.pathname;
     const isDashboardPage = currentPath.includes('dashboard.html');
     const isAuthPage = currentPath.includes('login.html') || currentPath.includes('signup.html');
 
     if (user) {
-        // User IS logged in
+        // If already logged in and on login/signup → redirect
         if (isAuthPage) {
             window.location.href = 'dashboard.html'; 
         }
 
         if (isDashboardPage) {
             try {
-                // Fetch user data from Firestore
                 const docRef = doc(db, "users", user.uid);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
                     const userData = docSnap.data();
-                    
-                    // Update Dashboard UI
+
                     const nameDisplay = document.getElementById('userNameDisplay');
                     const roleDisplay = document.getElementById('userRoleDisplay');
-                    
-                    if (nameDisplay) nameDisplay.textContent = `Welcome, ${userData.name}!`;
-                    if (roleDisplay) roleDisplay.textContent = `Role: ${userData.role}`;
 
-                    // Toggle menus based on role
+                    if (nameDisplay) {
+                        nameDisplay.textContent = `Welcome, ${userData.name}!`;
+                    }
+
+                    if (roleDisplay) {
+                        roleDisplay.textContent = `Role: ${userData.role}`;
+                    }
+
+                    // Role-based UI toggle
                     if (userData.role === 'teacher') {
                         document.getElementById('teacherMenu').style.display = 'block';
                         document.getElementById('studentMenu').style.display = 'none';
-                    } else if (userData.role === 'student') {
+                    } else {
                         document.getElementById('teacherMenu').style.display = 'none';
                         document.getElementById('studentMenu').style.display = 'block';
                     }
@@ -162,9 +165,9 @@ onAuthStateChanged(auth, async (user) => {
             }
         }
     } else {
-        // User IS NOT logged in
+        // Not logged in → protect pages
         if (isDashboardPage || currentPath.includes('create.html')) {
-            window.location.href = 'login.html'; // Kick them back to login if trying to access protected pages
+            window.location.href = 'login.html';
         }
     }
 });
