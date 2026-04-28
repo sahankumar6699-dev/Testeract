@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taking Test - MockTest Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="../index.html">MockTest Pro</a></div>
+    </nav>
+
+    <main class="container">
+        <div class="quiz-header">
+            <div>
+                <h1 style="font-size: 1.5rem;">Advanced Mathematics</h1>
+                <p class="card-meta">Question 1 of 50</p>
+            </div>
+            <div class="timer" id="quiz-timer">60:00</div>
+        </div>
+
+        <div class="question-container">
+            <p class="question-text">1. What is the derivative of x² with respect to x?</p>
+            <div class="options">
+                <label class="option-label">
+                    <input type="radio" name="q1" value="A"> A) x
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="B"> B) 2x
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="C"> C) x²
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="D"> D) 2
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-footer">
+            <button class="btn-outline">Previous</button>
+            <button class="btn-primary" onclick="window.location.href='dashboard.html'">Submit Test</button>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
