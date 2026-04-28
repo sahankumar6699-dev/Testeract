@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Test - MockTest Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="../index.html">MockTest Pro</a></div>
+        <div class="nav-links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="../index.html" class="btn-outline">Logout</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </nav>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Create a New Mock Test</h2>
+            <form action="dashboard.html" method="GET">
+                <div class="form-group">
+                    <label for="test-title">Test Title</label>
+                    <input type="text" id="test-title" required placeholder="e.g., Biology Final Prep">
+                </div>
+                
+                <div class="form-group">
+                    <label for="test-category">Category</label>
+                    <select id="test-category" required>
+                        <option value="science">Science</option>
+                        <option value="math">Mathematics</option>
+                        <option value="history">History</option>
+                        <option value="tech">Technology</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="time-limit">Time Limit (Minutes)</label>
+                    <input type="number" id="time-limit" required placeholder="60">
+                </div>
+
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                
+                <h3>Question 1</h3>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label for="q1-text">Question Text</label>
+                    <textarea id="q1-text" rows="3" required placeholder="Type your question here..."></textarea>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Option A</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Option B</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Option C</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Option D</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 1rem; margin-bottom: 2rem;">
+                    <label for="correct-answer">Correct Answer</label>
+                    <select id="correct-answer" required>
+                        <option value="A">Option A</option>
+                        <option value="B">Option B</option>
+                        <option value="C">Option C</option>
+                        <option value="D">Option D</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-outline" style="margin-bottom: 2rem; width: 100%;">+ Add Another Question</button>
+                <button type="submit" class="btn-submit">Publish Test</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
