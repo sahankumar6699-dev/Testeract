@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - MockTest Pro</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="../index.html">MockTest Pro</a></div>
+        <div class="nav-links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="login.html" class="btn-outline">Login</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </nav>
+
+    <main class="container">
+        <div class="auth-container">
+            <h2>Create an Account</h2>
+            <form action="dashboard.html" method="GET">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a password">
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem;">
+                    Already have an account? <a href="login.html" style="color: var(--primary-color);">Login</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
