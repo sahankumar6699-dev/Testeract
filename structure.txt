@@ -1,0 +1,16 @@
+testeract
+└── Testeract-main
+    ├── README.md              # Project overview, setup instructions, and usage guide
+    ├── css
+    │   └── style.css          # Global styling for the entire website (layout, colors, UI)
+    ├── firebase-schema.json   # Structure/plan of your Firebase database (collections, fields, etc.)
+    ├── index.html             # Entry point of the website (landing page / homepage)
+    ├── js
+    │   ├── firebase-auth.js   # Handles Firebase authentication (login, signup, user roles)
+    │   └── main.js            # Core frontend logic (UI interactions, quiz handling, dynamic updates)
+    └── pages
+        ├── create.html        # Page where teachers create quizzes (public/private options)
+        ├── dashboard.html     # User dashboard (shows quizzes, stats, navigation)
+        ├── login.html         # Login page for existing users
+        ├── quiz.html          # Page where users attempt quizzes
+        └── signup.html        # Signup/registration page for new users
