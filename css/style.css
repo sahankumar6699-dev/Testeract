@@ -366,4 +366,98 @@ a {
         grid-template-columns: 1fr;
     }
   }
-      
+
+/* =========================================
+   Search Bar
+   ========================================= */
+.search-container {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #007bff; /* Use your project's primary color here */
+}
+
+/* =========================================
+   UI States (Loading & Empty)
+   ========================================= */
+#loadingIndicator, 
+#emptyState {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* =========================================
+   Quiz Grid Layout
+   ========================================= */
+.quiz-grid {
+    display: grid;
+    /* This automatically creates a responsive grid. 
+       Cards will be at least 300px wide, and fill the space. */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Quiz Card Design
+   ========================================= */
+.quiz-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.quiz-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the meta data to the bottom */
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid #eaeaea;
+    padding-top: 1rem;
+    line-height: 1.6;
+}
+
+.card-meta strong {
+    color: #555;
+}
+
