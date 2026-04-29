@@ -1,0 +1,79 @@
+{
+  "users": {
+    "uid_a1b2c3d4": {
+      "name": "Sarah Jenkins",
+      "email": "sarah.teacher@example.com",
+      "role": "teacher",
+      "createdAt": "2026-04-29T08:30:00Z"
+    },
+    "uid_e5f6g7h8": {
+      "name": "Alex Carter",
+      "email": "alex.student@example.com",
+      "role": "student",
+      "createdAt": "2026-04-29T09:15:00Z"
+    }
+  },
+
+  "quizzes": {
+    "quiz_x9y8z7": {
+      "title": "Introduction to Web Development",
+      "description": "A basic test covering HTML, CSS, and JS fundamentals.",
+      "createdBy": "uid_a1b2c3d4",
+      "isPublic": false,
+      "accessKey": "WEB101",
+      "createdAt": "2026-04-29T10:00:00Z",
+      "questions": [
+        {
+          "question": "What does HTML stand for?",
+          "options": [
+            "Hyper Text Markup Language",
+            "Home Tool Markup Language",
+            "Hyperlinks and Text Markup Language",
+            "Hyper Tool Multi Language"
+          ],
+          "correctAnswer": "Hyper Text Markup Language"
+        },
+        {
+          "question": "Which property is used in CSS to change the background color?",
+          "options": [
+            "color",
+            "bgcolor",
+            "background-color",
+            "bg-color"
+          ],
+          "correctAnswer": "background-color"
+        }
+      ]
+    },
+    "quiz_m1n2o3": {
+      "title": "World Geography",
+      "description": "Test your knowledge of world capitals.",
+      "createdBy": "uid_a1b2c3d4",
+      "isPublic": true,
+      "accessKey": null,
+      "createdAt": "2026-04-29T10:45:00Z",
+      "questions": [
+        {
+          "question": "What is the capital of Japan?",
+          "options": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
+          "correctAnswer": "Tokyo"
+        }
+      ]
+    }
+  },
+
+  "results": {
+    "result_p4q5r6": {
+      "quizId": "quiz_x9y8z7",
+      "userId": "uid_e5f6g7h8",
+      "score": 2,
+      "totalQuestions": 2,
+      "percentage": 100,
+      "userAnswers": [
+        "Hyper Text Markup Language",
+        "background-color"
+      ],
+      "completedAt": "2026-04-29T11:20:00Z"
+    }
+  }
+}
