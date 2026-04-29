@@ -3,69 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MockTest Pro - Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Testeract - Quizzes</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand"><a href="index.html">MockTest Pro</a></div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="pages/dashboard.html">Dashboard</a>
-            <a href="pages/create.html">Create Test</a>
-            <a href="pages/login.html" class="btn-outline">Login</a>
-            <a href="pages/signup.html" class="btn-primary">Sign Up</a>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
-            &#9776;
-        </button>
-    </nav>
+    <header>
+        <nav>
+            <h1>Testeract</h1>
+        </nav>
+    </header>
 
-    <main class="container">
-        <header class="hero">
-            <h1>Featured Mock Tests</h1>
-            <p>Prepare for your exams with our top-rated practice tests.</p>
-        </header>
+    <main>
+        <section class="hero">
+            <h2>Explore Quizzes</h2>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search quizzes by title..." 
+                    autocomplete="off"
+                >
+            </div>
+        </section>
 
-        <section class="card-grid">
-            <article class="test-card">
-                <div class="card-thumbnail" style="background-color: #ff9999;"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Advanced Mathematics</h3>
-                    <p class="card-meta">50 Questions • 60 Mins</p>
-                    <a href="pages/quiz.html" class="btn-secondary">Start Test</a>
+        <section class="content">
+            <div id="loadingIndicator">Loading quizzes...</div>
+            <div id="emptyState" style="display: none;">No quizzes found.</div>
+            
+            <div id="quizGrid" class="quiz-grid">
                 </div>
-            </article>
-
-            <article class="test-card">
-                <div class="card-thumbnail" style="background-color: #99ccff;"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Physics: Kinematics</h3>
-                    <p class="card-meta">30 Questions • 45 Mins</p>
-                    <a href="pages/quiz.html" class="btn-secondary">Start Test</a>
-                </div>
-            </article>
-
-            <article class="test-card">
-                <div class="card-thumbnail" style="background-color: #99ff99;"></div>
-                <div class="card-content">
-                    <h3 class="card-title">World History Basics</h3>
-                    <p class="card-meta">40 Questions • 50 Mins</p>
-                    <a href="pages/quiz.html" class="btn-secondary">Start Test</a>
-                </div>
-            </article>
-
-             <article class="test-card">
-                <div class="card-thumbnail" style="background-color: #ffd699;"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Computer Science 101</h3>
-                    <p class="card-meta">25 Questions • 30 Mins</p>
-                    <a href="pages/quiz.html" class="btn-secondary">Start Test</a>
-                </div>
-            </article>
         </section>
     </main>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
